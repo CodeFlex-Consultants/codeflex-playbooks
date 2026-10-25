@@ -1,0 +1,54 @@
+id: common.testing-library
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: web-platform
+requiredReviewers:
+  - web-platform
+installWhen:
+  any:
+    - packageReference:
+        package: "@testing-library/react"
+        version: ">=0.0.0"
+    - packageReference:
+        package: "@testing-library/angular"
+        version: ">=0.0.0"
+    - packageReference:
+        package: "@testing-library/vue"
+        version: ">=0.0.0"
+    - packageReference:
+        package: "@testing-library/svelte"
+        version: ">=0.0.0"
+    - packageReference:
+        package: "@testing-library/jest-dom"
+        version: ">=0.0.0"
+    - packageReference:
+        package: "@testing-library/user-event"
+        version: ">=0.0.0"
+appliesWhen:
+  paths:
+    - "**/*.test.ts"
+    - "**/*.test.tsx"
+    - "**/*.spec.ts"
+    - "**/*.spec.tsx"
+  capabilities:
+    - testing
+    - frontend
+    - ui
+rules:
+  - TL-001
+  - TL-002
+  - TL-003
+  - TL-004
+  - TL-005
+  - TL-006
+  - TL-007
+  - TL-008
+  - TL-009
+references:
+  - references/query-priorities.md
+  - references/async-patterns.md
+  - references/framework-adapters.md
+review:
+  lastReviewed: 2026-09-17
+  reviewBy: 2027-03-01

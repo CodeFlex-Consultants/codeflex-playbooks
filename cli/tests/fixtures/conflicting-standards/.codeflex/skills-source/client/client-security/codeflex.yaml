@@ -1,0 +1,9 @@
+id: client-security
+source: client
+overridePolicy: allowed
+owner:
+  team: client-team
+overrides:
+  - SEC-001
+rules:
+  - SEC-001

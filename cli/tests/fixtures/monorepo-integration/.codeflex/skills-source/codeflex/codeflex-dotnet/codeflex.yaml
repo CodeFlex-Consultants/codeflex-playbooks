@@ -1,0 +1,12 @@
+id: codeflex-dotnet
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: platform
+installWhen:
+  any:
+    - file:
+        pattern: "**/*.csproj"
+rules:
+  - DOTNET-001
+  - DOTNET-002

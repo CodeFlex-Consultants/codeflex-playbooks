@@ -1,0 +1,6 @@
+{
+  "name": "prisma-v8-app",
+  "dependencies": {
+    "prisma": "^8.0.0"
+  }
+}

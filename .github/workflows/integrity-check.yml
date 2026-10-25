@@ -1,0 +1,32 @@
+name: Package Integrity Check
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    name: Verify Published Package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@codeflex-consultants'
+
+      - name: Verify latest stable matches repo
+        working-directory: cli
+        run: |
+          REPO_VERSION=$(node -p "require('./package.json').version")
+          PUBLISHED_VERSION=$(npm view @codeflex-consultants/codeflex-playbooks version 2>/dev/null || echo "none")
+          if [ "$REPO_VERSION" != "$PUBLISHED_VERSION" ]; then
+            echo "::warning::Published version ($PUBLISHED_VERSION) does not match repo version ($REPO_VERSION)"
+          else
+            echo "Versions match: $REPO_VERSION"
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,37 @@
+id: backend.entity-framework-6
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: backend-platform
+requiredReviewers:
+  - backend-platform
+installWhen:
+  any:
+    - packageReference:
+        package: "EntityFramework"
+        version: ">=6.0.0"
+appliesWhen:
+  paths:
+    - "**/*.cs"
+    - "**/Migrations/**"
+  capabilities:
+    - database
+    - persistence
+    - query
+    - migration
+rules:
+  - EF6-001
+  - EF6-002
+  - EF6-003
+  - EF6-004
+  - EF6-005
+  - EF6-006
+  - EF6-007
+  - EF6-008
+references:
+  - references/ef6-vs-efcore.md
+  - references/code-first-patterns.md
+  - references/migration-strategies.md
+review:
+  lastReviewed: 2026-09-17
+  reviewBy: 2027-03-01

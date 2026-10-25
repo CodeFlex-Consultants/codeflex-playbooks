@@ -1,0 +1,11 @@
+id: frontend.angular
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: frontend
+installWhen:
+  any:
+    - file:
+        pattern: "**/angular.json"
+rules:
+  - ANGULAR-001

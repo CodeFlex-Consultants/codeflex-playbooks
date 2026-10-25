@@ -1,0 +1,5 @@
+# Default owners for all changes
+* @CodeFlex-Consultants/engineering-platform
+
+# CLI-specific owners
+cli/ @CodeFlex-Consultants/engineering-platform
