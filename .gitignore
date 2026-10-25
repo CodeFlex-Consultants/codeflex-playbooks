@@ -1,0 +1,47 @@
+# Dependencies
+cli/node_modules/
+
+# Build outputs
+cli/dist/
+cli/build/
+*.tsbuildinfo
+
+# JetBrains IDE files
+.idea/
+
+# AI Tooling
+.kilo/
+.serena/
+.codeflex/*
+!.codeflex/*.lock
+cli/.codeflex/*
+!cli/.codeflex/*.lock
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# macOS
+.DS_Store
+
+# Environment & secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test coverage
+cli/coverage/
+
+# Vitest 5.x artifacts
+.vitest/
+
+# OS
+Thumbs.db
