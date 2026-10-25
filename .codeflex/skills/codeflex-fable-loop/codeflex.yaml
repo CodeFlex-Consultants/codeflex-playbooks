@@ -1,0 +1,35 @@
+id: common.fable-loop
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: backend-platform
+requiredReviewers:
+  - backend-platform
+requires:
+  - common.fable-method
+appliesWhen:
+  paths:
+    - "**/*.cs"
+    - "**/*.ts"
+    - "**/*.js"
+    - "**/*.py"
+    - "**/*.java"
+    - "**/*.go"
+    - "**/*.rb"
+    - "**/*.php"
+    - "**/*.sln"
+    - "**/*.csproj"
+    - "**/package.json"
+    - "**/Dockerfile"
+  capabilities:
+    - methodology
+    - workflow
+    - agent-orchestration
+rules:
+  - LOOP-001
+  - LOOP-002
+  - LOOP-003
+  - LOOP-004
+review:
+  lastReviewed: 2026-09-22
+  reviewBy: 2027-03-22

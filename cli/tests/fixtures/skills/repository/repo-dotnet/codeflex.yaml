@@ -1,0 +1,12 @@
+id: repo-dotnet
+source: repository
+overridePolicy: allowed
+owner:
+  team: repo-team
+installWhen:
+  any:
+    - packageReference:
+        package: Microsoft.NET.Sdk
+        version: ">=8.0.0"
+rules:
+  - DOTNET-003

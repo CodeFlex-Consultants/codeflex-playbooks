@@ -1,0 +1,15 @@
+id: backend.entity-framework
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: platform
+installWhen:
+  any:
+    - packageReference:
+        package: Microsoft.EntityFrameworkCore
+        version: ">=8.0.0 <11.0.0"
+requires:
+  - backend.dotnet
+rules:
+  - EF-001
+  - EF-002

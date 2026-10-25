@@ -1,0 +1,42 @@
+id: frontend.nextjs
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: web-platform
+requiredReviewers:
+  - web-platform
+installWhen:
+  any:
+    - packageReference:
+        package: "next"
+        version: ">=0.0.0"
+requires:
+  - codeflex-react
+appliesWhen:
+  paths:
+    - "**/*.tsx"
+    - "**/*.ts"
+    - "**/app/**"
+    - "**/pages/**"
+    - "**/next.config.*"
+  capabilities:
+    - frontend
+    - ssr
+rules:
+  - NEXT-001
+  - NEXT-002
+  - NEXT-003
+  - NEXT-004
+  - NEXT-005
+  - NEXT-006
+  - NEXT-007
+  - NEXT-008
+  - NEXT-009
+  - NEXT-010
+references:
+  - references/app-router-patterns.md
+  - references/data-fetching.md
+  - references/optimization-and-performance.md
+review:
+  lastReviewed: 2026-09-17
+  reviewBy: 2027-03-01

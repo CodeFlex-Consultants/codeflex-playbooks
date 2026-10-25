@@ -1,0 +1,104 @@
+name: Publish Stable
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cli/**'
+      - '.github/workflows/**'
+  workflow_dispatch:
+
+concurrency:
+  group: publish-stable
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish Stable Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write  # Required for npm provenance
+    defaults:
+      run:
+        working-directory: cli
+
+    steps:
+      - name: Generate GitHub App token
+        uses: actions/create-github-app-token@v3
+        id: app-token
+        with:
+          client-id: ${{ secrets.RELEASE_APP_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Set git safe.directory
+        run: git config --global --add safe.directory '*'
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 26
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@codeflex-consultants'
+
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v4
+        with:
+          versionSpec: '6.x'
+
+      - name: Determine version
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v4
+        with:
+          configFilePath: GitVersion.yml
+
+      - name: Set stable version
+        run: |
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          TARGET_VERSION="${{ steps.gitversion.outputs.majorMinorPatch }}"
+          if [ "$CURRENT_VERSION" != "$TARGET_VERSION" ]; then
+            npm version "$TARGET_VERSION" --no-git-tag-version --git-tag-version=false
+          fi
+
+      - run: npm ci
+      - run: npm audit --audit-level=high
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run build
+      - run: npm test
+
+      - name: Publish to npm
+        run: npm publish --tag latest --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub Release
+        uses: actions/github-script@v9
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        with:
+          script: |
+            const version = '${{ steps.gitversion.outputs.majorMinorPatch }}';
+            await github.rest.repos.createRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: `v${version}`,
+              name: `@codeflex-consultants/codeflex-playbooks v${version}`,
+              generate_release_notes: true,
+            });
+
+      - name: Commit version back
+        env:
+          VERSION: ${{ steps.gitversion.outputs.majorMinorPatch }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add package.json package-lock.json
+          git commit -m "chore(release): v${VERSION} [skip ci]"
+          git push

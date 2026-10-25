@@ -1,0 +1,51 @@
+id: common.fable-method
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: backend-platform
+requiredReviewers:
+  - backend-platform
+appliesWhen:
+  paths:
+    - "**/*.cs"
+    - "**/*.ts"
+    - "**/*.js"
+    - "**/*.py"
+    - "**/*.java"
+    - "**/*.go"
+    - "**/*.rb"
+    - "**/*.php"
+    - "**/*.sln"
+    - "**/*.csproj"
+    - "**/package.json"
+    - "**/Dockerfile"
+  capabilities:
+    - methodology
+    - workflow
+    - agent-orchestration
+rules:
+  - FABLE-001
+  - FABLE-002
+  - FABLE-003
+  - FABLE-004
+  - FABLE-005
+  - FABLE-006
+  - FABLE-007
+  - FABLE-008
+  - FABLE-009
+references:
+  - references/failure-modes.md
+  - references/examples.md
+  - references/flowcharts.md
+  - references/domains/TEMPLATE.md
+  - references/domains/business-ops.md
+  - references/domains/data-analysis.md
+  - references/domains/design-ux.md
+  - references/domains/devops.md
+  - references/domains/finance.md
+  - references/domains/legal-compliance.md
+  - references/domains/marketing.md
+  - references/domains/research.md
+review:
+  lastReviewed: 2026-09-22
+  reviewBy: 2027-03-22

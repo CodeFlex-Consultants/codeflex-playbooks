@@ -1,0 +1,37 @@
+id: common.documentation
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: backend-platform
+requiredReviewers:
+  - backend-platform
+  - web-platform
+requires:
+  - common.engineering
+appliesWhen:
+  paths:
+    - "**/*.md"
+    - "**/README*"
+    - "**/docs/**"
+    - "**/*.cs"
+    - "**/*.ts"
+  capabilities:
+    - documentation
+    - adr
+    - readme
+    - runbook
+    - api-docs
+rules:
+  - DOC-001
+  - DOC-002
+  - DOC-003
+  - DOC-004
+  - DOC-005
+  - DOC-006
+references:
+  - references/adrs-and-decision-records.md
+  - references/readme-and-runbook-standards.md
+  - references/api-doc-comments.md
+review:
+  lastReviewed: 2026-09-22
+  reviewBy: 2027-03-01

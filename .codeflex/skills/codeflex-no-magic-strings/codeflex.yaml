@@ -1,0 +1,30 @@
+id: common.no-magic-strings
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: backend-platform
+requiredReviewers:
+  - backend-platform
+  - web-platform
+requires: []
+appliesWhen:
+  paths:
+    - "**/*.cs"
+    - "**/*.ts"
+    - "**/*.js"
+    - "**/*.java"
+    - "**/*.py"
+rules:
+  - MAGIC-001
+  - MAGIC-002
+  - MAGIC-003
+  - MAGIC-004
+  - MAGIC-005
+  - MAGIC-006
+  - MAGIC-007
+references:
+  - references/refactoring-patterns.md
+  - references/choosing-the-right-abstraction.md
+review:
+  lastReviewed: 2026-09-21
+  reviewBy: 2027-03-08

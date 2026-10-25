@@ -1,0 +1,82 @@
+{
+  "name": "@codeflex-consultants/codeflex-playbooks",
+  "version": "1.0.1",
+  "description": "CLI for detecting project technologies, resolving engineering standards, and distributing Agent Skills to application repositories",
+  "type": "module",
+  "bin": {
+    "codeflex-playbooks": "./dist/bin.js",
+    "codeflex": "./dist/bin.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./lib": {
+      "types": "./dist/lib.d.ts",
+      "import": "./dist/lib.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/bin.ts src/index.ts src/lib.ts --format esm --dts --sourcemap --target node26 && node -e \"if (process.platform !== 'win32') require('child_process').execSync('chmod +x dist/bin.js')\"",
+    "dev": "tsx src/bin.ts",
+    "lint": "eslint src/ tests/",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\""
+  },
+  "keywords": [
+    "codeflex",
+    "engineering-standards",
+    "agent-skills",
+    "cli"
+  ],
+  "author": "CodeFlex Consultants",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeFlex-Consultants/codeflex-playbooks.git"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=26.0.0"
+  },
+  "dependencies": {
+    "chalk": "^6.0.1",
+    "commander": "^15.0.0",
+    "glob": "^13.0.6",
+    "minimatch": "^10.2.6",
+    "semver": "^7.8.5",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.5",
+    "@types/semver": "^7.8.0",
+    "@typescript-eslint/eslint-plugin": "^8.72.0",
+    "@typescript-eslint/parser": "^8.72.0",
+    "@vitest/coverage-v8": "^5.0.5",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "tsup": "^9.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.5"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": true
+  }
+}
