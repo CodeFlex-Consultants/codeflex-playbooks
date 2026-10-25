@@ -1,0 +1,6 @@
+{
+  "name": "mongodb-app",
+  "dependencies": {
+    "mongodb": "^6.3.0"
+  }
+}

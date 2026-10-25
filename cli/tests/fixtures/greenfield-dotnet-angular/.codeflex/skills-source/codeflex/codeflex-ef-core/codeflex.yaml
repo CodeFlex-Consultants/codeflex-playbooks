@@ -1,0 +1,14 @@
+id: codeflex-ef-core
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: platform
+installWhen:
+  any:
+    - packageReference:
+        package: entity-framework-core
+        version: "*"
+requires:
+  - codeflex-dotnet
+rules:
+  - EF-001

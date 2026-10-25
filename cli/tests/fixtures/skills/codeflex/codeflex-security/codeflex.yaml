@@ -1,0 +1,7 @@
+id: common.security
+source: codeflex
+overridePolicy: required
+owner:
+  team: security
+rules:
+  - SEC-001

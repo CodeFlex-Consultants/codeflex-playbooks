@@ -1,0 +1,40 @@
+id: common.vitest
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: web-platform
+requiredReviewers:
+  - web-platform
+installWhen:
+  any:
+    - packageReference:
+        package: "vitest"
+        version: ">=0.0.0"
+appliesWhen:
+  paths:
+    - "**/*.test.ts"
+    - "**/*.test.tsx"
+    - "**/*.test.js"
+    - "**/*.test.jsx"
+    - "**/*.spec.ts"
+    - "**/*.spec.tsx"
+    - "**/vitest.config.*"
+  capabilities:
+    - testing
+    - frontend
+rules:
+  - VITEST-001
+  - VITEST-002
+  - VITEST-003
+  - VITEST-004
+  - VITEST-005
+  - VITEST-006
+  - VITEST-007
+  - VITEST-008
+references:
+  - references/test-structure-and-organization.md
+  - references/mocking-and-stubbing.md
+  - references/coverage-and-performance.md
+review:
+  lastReviewed: 2026-09-17
+  reviewBy: 2027-03-01
