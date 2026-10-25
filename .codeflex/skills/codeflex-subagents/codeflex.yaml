@@ -1,0 +1,42 @@
+id: common.subagents
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: backend-platform
+requiredReviewers:
+  - backend-platform
+appliesWhen:
+  paths:
+    - "**/*.cs"
+    - "**/*.ts"
+    - "**/*.js"
+    - "**/*.py"
+    - "**/*.java"
+    - "**/*.go"
+    - "**/*.rb"
+    - "**/*.php"
+    - "**/*.sln"
+    - "**/*.csproj"
+    - "**/package.json"
+    - "**/Dockerfile"
+  capabilities:
+    - agent-orchestration
+    - workflow
+    - delegation
+    - methodology
+rules:
+  - SUBAGENT-001
+  - SUBAGENT-002
+  - SUBAGENT-003
+  - SUBAGENT-004
+  - SUBAGENT-005
+  - SUBAGENT-006
+  - SUBAGENT-007
+references:
+  - references/parallel-tool-calls.md
+  - references/delegation-patterns.md
+  - references/prompt-templates.md
+  - references/integration-and-error-handling.md
+review:
+  lastReviewed: 2026-09-24
+  reviewBy: 2027-03-24

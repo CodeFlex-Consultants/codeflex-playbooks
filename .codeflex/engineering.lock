@@ -1,0 +1,64 @@
+# CodeFlex Engineering Standards lockfile — do not edit manually
+version: 1
+sources:
+  codeflex:
+    release: git:https://github.com/CodeFlex-Consultants/engineering-skills.git@96af1df18230
+    commit: 96af1df1823066d04abc7ab314d78000ec35c272
+    sha256: cecc7d6f5faf94ad37a6c390ecb154f0267d677428ec469d3e1b4760899819ba
+  client: []
+  repository: []
+skills:
+  - codeflex-domain-driven-design
+  - codeflex-code-craftsmanship
+  - codeflex-context-engineering
+  - codeflex-documentation
+  - codeflex-fable-domain
+  - codeflex-fable-judge
+  - codeflex-fable-loop
+  - codeflex-fable-method
+  - codeflex-no-magic-strings
+  - codeflex-subagents
+  - codeflex-vitest
+skillSources:
+  codeflex-domain-driven-design: codeflex
+  codeflex-code-craftsmanship: codeflex
+  codeflex-context-engineering: codeflex
+  codeflex-documentation: codeflex
+  codeflex-fable-domain: codeflex
+  codeflex-fable-judge: codeflex
+  codeflex-fable-loop: codeflex
+  codeflex-fable-method: codeflex
+  codeflex-no-magic-strings: codeflex
+  codeflex-subagents: codeflex
+  codeflex-vitest: codeflex
+resolvedOverrides: {}
+projections:
+  - adapters:
+      - codex
+      - opencode
+      - kilo
+    path: ~/.agents/skills
+managedProjections:
+  ~/.agents/skills:
+    - codeflex-domain-driven-design
+    - codeflex-code-craftsmanship
+    - codeflex-context-engineering
+    - codeflex-documentation
+    - codeflex-fable-domain
+    - codeflex-fable-judge
+    - codeflex-fable-loop
+    - codeflex-fable-method
+    - codeflex-no-magic-strings
+    - codeflex-subagents
+    - codeflex-vitest
+crossCuttingSkills:
+  - codeflex-domain-driven-design
+  - codeflex-code-craftsmanship
+  - codeflex-context-engineering
+  - codeflex-documentation
+  - codeflex-fable-domain
+  - codeflex-fable-judge
+  - codeflex-fable-loop
+  - codeflex-fable-method
+  - codeflex-no-magic-strings
+  - codeflex-subagents

@@ -1,0 +1,6 @@
+{
+  "name": "react-native-app",
+  "dependencies": {
+    "react-native": "^0.76.0"
+  }
+}

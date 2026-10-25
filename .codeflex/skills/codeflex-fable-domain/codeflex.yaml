@@ -1,0 +1,35 @@
+id: common.fable-domain
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: backend-platform
+requiredReviewers:
+  - backend-platform
+requires:
+  - common.fable-method
+appliesWhen:
+  paths:
+    - "**/*.cs"
+    - "**/*.ts"
+    - "**/*.js"
+    - "**/*.py"
+    - "**/*.java"
+    - "**/*.go"
+    - "**/*.rb"
+    - "**/*.php"
+    - "**/*.sln"
+    - "**/*.csproj"
+    - "**/package.json"
+    - "**/Dockerfile"
+  capabilities:
+    - methodology
+    - workflow
+    - agent-orchestration
+rules:
+  - DOMAIN-001
+  - DOMAIN-002
+  - DOMAIN-003
+  - DOMAIN-004
+review:
+  lastReviewed: 2026-09-22
+  reviewBy: 2027-03-22

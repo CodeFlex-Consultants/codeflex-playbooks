@@ -1,0 +1,43 @@
+workflow: GitHubFlow/v1
+next-version: 1.0.1
+tag-prefix: "[vV]?"
+
+branches:
+  main:
+    regex: ^main$
+    is-main-branch: true
+    is-release-branch: true
+    increment: Patch
+    pre-release-weight: 0
+    label: null
+
+  dev:
+    regex: ^dev(elop)?(ment)?$
+    is-main-branch: false
+    is-release-branch: false
+    increment: Minor
+    label: dev
+    pre-release-weight: 10
+
+  feature:
+    regex: ^features?[/-]
+    is-main-branch: false
+    is-release-branch: false
+    increment: Inherit
+    label: "{BranchName}"
+    pre-release-weight: 20
+
+  pull-request:
+    regex: ^(pull|pull\-requests|pr)[/-]
+    is-main-branch: false
+    is-release-branch: false
+    increment: Inherit
+    label: PullRequest
+    pre-release-weight: 30
+
+major-version-bump-message: '\+semver:\s?(breaking|major)'
+minor-version-bump-message: '\+semver:\s?(feature|minor)'
+patch-version-bump-message: '\+semver:\s?(fix|patch)'
+
+ignore:
+  sha: []

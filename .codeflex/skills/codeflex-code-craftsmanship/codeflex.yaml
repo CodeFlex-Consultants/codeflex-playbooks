@@ -1,0 +1,40 @@
+id: common.code-craftsmanship
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: backend-platform
+requiredReviewers:
+  - backend-platform
+  - web-platform
+requires:
+  - common.engineering
+appliesWhen:
+  paths:
+    - "**/*.cs"
+    - "**/*.ts"
+    - "**/*.js"
+    - "**/*.java"
+    - "**/*.py"
+rules:
+  - CRAFT-001
+  - CRAFT-002
+  - CRAFT-003
+  - CRAFT-004
+  - CRAFT-005
+  - CRAFT-006
+  - CRAFT-007
+  - CRAFT-008
+  - CRAFT-009
+references:
+  - references/solid-principles.md
+  - references/design-patterns.md
+  - references/coupling-and-cohesion.md
+  - references/cognitive-complexity.md
+  - references/code-smells-and-refactoring.md
+  - references/advanced-error-handling.md
+  - references/performance-patterns.md
+  - references/dependency-injection.md
+  - references/documentation-standards.md
+review:
+  lastReviewed: 2026-09-17
+  reviewBy: 2027-03-17

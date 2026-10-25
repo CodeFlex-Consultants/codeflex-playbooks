@@ -1,0 +1,31 @@
+id: architecture.domain-driven-design
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: architecture
+requiredReviewers:
+  - architecture
+requires:
+  - common.code-craftsmanship
+appliesWhen:
+  paths:
+    - "**/*.cs"
+  capabilities:
+    - domain-modeling
+    - ddd
+rules:
+  - DDD-001
+  - DDD-002
+  - DDD-003
+  - DDD-004
+  - DDD-005
+  - DDD-006
+  - DDD-007
+references:
+  - references/aggregates-and-invariants.md
+  - references/value-objects-and-records.md
+  - references/bounded-contexts-and-domain-events.md
+review:
+  lastReviewed: 2026-09-22
+  reviewBy: 2027-03-01
+

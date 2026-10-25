@@ -1,0 +1,13 @@
+id: backend.dotnet
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: platform
+installWhen:
+  any:
+    - packageReference:
+        package: Microsoft.NET.Sdk
+        version: ">=8.0.0"
+rules:
+  - DOTNET-001
+  - DOTNET-002

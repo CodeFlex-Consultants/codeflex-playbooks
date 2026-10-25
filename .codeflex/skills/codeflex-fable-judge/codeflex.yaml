@@ -1,0 +1,36 @@
+id: common.fable-judge
+source: codeflex
+overridePolicy: allowed
+owner:
+  team: backend-platform
+requiredReviewers:
+  - backend-platform
+requires:
+  - common.fable-method
+appliesWhen:
+  paths:
+    - "**/*.cs"
+    - "**/*.ts"
+    - "**/*.js"
+    - "**/*.py"
+    - "**/*.java"
+    - "**/*.go"
+    - "**/*.rb"
+    - "**/*.php"
+    - "**/*.sln"
+    - "**/*.csproj"
+    - "**/package.json"
+    - "**/Dockerfile"
+  capabilities:
+    - methodology
+    - workflow
+    - agent-orchestration
+rules:
+  - JUDGE-001
+  - JUDGE-002
+  - JUDGE-003
+  - JUDGE-004
+  - JUDGE-005
+review:
+  lastReviewed: 2026-09-22
+  reviewBy: 2027-03-22

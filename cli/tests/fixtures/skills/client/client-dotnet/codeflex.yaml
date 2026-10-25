@@ -1,0 +1,9 @@
+id: client-dotnet
+source: client
+overridePolicy: allowed
+owner:
+  team: client-team
+overrides:
+  - DOTNET-002
+rules:
+  - DOTNET-002

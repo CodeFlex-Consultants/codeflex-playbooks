@@ -1,0 +1,16 @@
+# CodeFlex Engineering Standards configuration — managed by codeflex-playbooks CLI
+version: 1
+autoDetect: true
+agentHarnesses:
+  - codex
+  - opencode
+  - kilo
+standards:
+  codeflex:
+    enabled: true
+include: []
+exclude: []
+scopes:
+  vitest:
+    - cli/**
+exceptions: []

@@ -1,0 +1,7 @@
+{
+  "name": "prisma-app",
+  "dependencies": {
+    "prisma": "^5.9.0",
+    "@prisma/client": "^5.9.0"
+  }
+}

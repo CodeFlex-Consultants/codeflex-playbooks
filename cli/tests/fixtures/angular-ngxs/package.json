@@ -1,0 +1,7 @@
+{
+  "name": "angular-ngxs",
+  "dependencies": {
+    "@angular/core": "^20.0.0",
+    "@ngxs/store": "^20.0.0"
+  }
+}
